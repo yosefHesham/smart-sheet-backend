@@ -1,0 +1,14 @@
+{
+  "name": "smart_sheet",
+  "version": "1.0.0",
+  "description": "mostafa sad smart sheet that helps trainees to measure their progress easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wael",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
