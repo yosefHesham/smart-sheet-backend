@@ -4,8 +4,10 @@
   "description": "mostafa sad smart sheet that helps trainees to measure their progress easier",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
   },
+  "engines": {"node": "15.12.0"},
   "author": "wael",
   "license": "ISC",
   "dependencies": {
