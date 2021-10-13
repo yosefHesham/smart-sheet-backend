@@ -9,6 +9,7 @@ const sheetSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
   author: {
     type: String,
