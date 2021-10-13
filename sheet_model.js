@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const shortId = require("shortid");
 
+const validValues = ["UVA,CF,SPOJ"];
+
 const sheetSchema = mongoose.Schema({
   _id: {
     type: String,
@@ -35,9 +37,9 @@ const sheetSchema = mongoose.Schema({
         type: String,
         validate: {
           validator: function (v) {
-            return v === "CF" || v === "UVA" || "SPOJ";
+            return validValues.includes(v.toUpperCase());
           },
-          message: "must one of those values [CF , UVA, SPOJ]",
+          message: `Type must be one of those ${validValues.join(",")}`,
         },
       },
       name: String,
