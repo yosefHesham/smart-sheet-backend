@@ -24,7 +24,7 @@ sheetRouter.get("/", async (req, res) => {
   }
 });
 
-sheetRouter.get("/:name", async (req, res) => {
+sheetRouter.get("/?q=name/:name", async (req, res) => {
   try {
     const result = await Sheet.findOne({ name: req.params.name }).select(
       "-__v"
@@ -38,11 +38,10 @@ sheetRouter.get("/:name", async (req, res) => {
     res.status(200).json(createResponse("success", result));
   } catch (ex) {
     res.status(400).json(createResponse("error", x.message));
-    next();
   }
 });
 
-sheetRouter.get("/:id", async (req, res) => {
+sheetRouter.get("/?q=id/:id", async (req, res) => {
   try {
     const result = await Sheet.findById(req.params.id).select("-__v");
     if (!result) {
