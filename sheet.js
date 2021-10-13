@@ -11,7 +11,7 @@ sheetRouter.post("/", async (req, res) => {
     const result = await sheet.save();
     res.status(200).json(createResponse("success", result));
   } catch (x) {
-    res.status(400).json(createResponse("error", x.errors.description.message));
+    res.status(400).json(createResponse("error", x.message));
   }
 });
 
