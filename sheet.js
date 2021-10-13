@@ -38,6 +38,7 @@ sheetRouter.get("/:name", async (req, res) => {
     res.status(200).json(createResponse("success", result));
   } catch (ex) {
     res.status(400).json(createResponse("error", x.message));
+    next();
   }
 });
 
