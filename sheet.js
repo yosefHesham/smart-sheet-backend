@@ -7,7 +7,14 @@ function createResponse(status, message) {
 
 sheetRouter.post("/", async (req, res) => {
   try {
-    const sheet = new Sheet(req.body);
+    let sheet;
+    sheet = await Sheet.findOne({ name: req.body.name });
+    if (sheet) {
+      return res
+        .status(400)
+        .json(createResponse("error", "sheet with this name already exists"));
+    }
+    sheet = new Sheet(req.body);
     const result = await sheet.save();
     res.status(200).json(createResponse("success", result));
   } catch (x) {
