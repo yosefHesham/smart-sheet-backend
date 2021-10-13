@@ -41,4 +41,19 @@ sheetRouter.get("/:name", async (req, res) => {
   }
 });
 
+sheetRouter.get("/:id", async (req, res) => {
+  try {
+    const result = await Sheet.findById(req.params.id).select("-__v");
+    if (!result) {
+      //return res.status(404).send("Sheet with this name is not found !");
+      return res
+        .status(404)
+        .json(createResponse("error", "Sheet with this id is not found !"));
+    }
+    res.status(200).json(createResponse("success", result));
+  } catch (ex) {
+    res.status(400).json(createResponse("error", x.message));
+  }
+});
+
 module.exports = sheetRouter;
