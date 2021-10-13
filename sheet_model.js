@@ -40,6 +40,7 @@ const sheetSchema = mongoose.Schema({
       },
       name: String,
       link: String,
+      notes: String,
     }),
   ],
 
