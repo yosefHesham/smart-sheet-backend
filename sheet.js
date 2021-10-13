@@ -17,7 +17,7 @@ sheetRouter.post("/", async (req, res) => {
 
 sheetRouter.get("/", async (req, res) => {
   try {
-    const result = await Sheet.find().select("-__v name");
+    const result = await Sheet.find().select("name");
     res.status(200).json(createResponse("success", result));
   } catch (ex) {
     res.status(400).json(createResponse("error", x.message));
