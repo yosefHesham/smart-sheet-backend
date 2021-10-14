@@ -1,7 +1,8 @@
 const app = require("express")();
 // Adding cors to header
 const cors = require('cors')
-app.use(cors());
+app.use(cors({origin: '*'}));
+
 require("./startup/routes")(app);
 require("./startup/db")();
 require("./startup/prod")(app);
