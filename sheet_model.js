@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const shortId = require("shortid");
 
-const validValues = ["UVA,CF,SPOJ"];
+const validValues = ["UVA,CF,SPOJ","LINK","TIMUS", "LIVE"];
 
 const sheetSchema = mongoose.Schema({
   _id: {
